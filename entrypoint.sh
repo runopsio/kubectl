@@ -6,4 +6,4 @@
 echo "$KUBE_CONFIG_DATA" | base64 -di > /tmp/config
 export KUBECONFIG=/tmp/config
 
-bash -c "echo "::group::logs" && kubectl${KUBECTL_VERSION:+.${KUBECTL_VERSION}} $* && echo "::endgroup::""
+bash -c "echo "::group::logs"; kubectl${KUBECTL_VERSION:+.${KUBECTL_VERSION}} $*; echo "::endgroup::""
